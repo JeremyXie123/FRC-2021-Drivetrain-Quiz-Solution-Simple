@@ -35,7 +35,7 @@ Your variables should be defined within the class declaration, with the access m
 
 ---
 
-### (1) Write the contents of 'RobotContainer.java'
+### (1) Write the contents of `RobotContainer.java`
 
 #### Background Knowledge
 This class contains the majority of the mappings between components.
@@ -138,4 +138,4 @@ Information from [WPILIB](https://docs.wpilib.org/en/stable/) and [Rev Robotics]
 |[GenericHID](https://first.wpi.edu/FRC/roborio/beta/docs/java/edu/wpi/first/wpilibj/GenericHID.html)|
 |[CANSparkMax](https://www.revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANSparkMax.html)|
 [CommandBase](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html)|
-|[SubsstemBase](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/command/Subsystem.html)|
+|[SubsystemBase](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/command/Subsystem.html)|
