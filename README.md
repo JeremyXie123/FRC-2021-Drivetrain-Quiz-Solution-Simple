@@ -49,6 +49,7 @@ This class contains the majority of the mappings between components.
 * Inside the constructor:
     * Instantiate a new `Drivetrain` subsystem, passing the necessary arguments to the constructor.
     * Set your drivetrain instance's default command to a new `TeleopDrive` instance, using `SubsystemBase.setDefaultCommand(CommandBase command)`
+    * Not required, but if you'd like to add buttons (`JoystickButton`) to your drivetrain, feel free to look at the documentation [here](https://first.wpi.edu/FRC/roborio/beta/docs/java/edu/wpi/first/wpilibj/buttons/JoystickButton.html).
 
 ---
 
