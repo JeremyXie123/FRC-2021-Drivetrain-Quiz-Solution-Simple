@@ -13,11 +13,18 @@ Feel free to use any resources available to you, including our slides, google, e
 Now that we know some git :), you can use clone! Run `git clone https://github.com/JeremyXie123/FRC-Drivetrain-Quiz` in your terminal, in whatever root directory you will be working on.
 * If you would like to commit to your own repository while you make your changes, fork the official repository and work on your copy, This will allow you to push to an online repository.
 
+## Dependency Management
+
+For this project you are going to be using the `CANSparkMax` class to control REV Robotics SPARK MAX motor controllers. However, this is a component from a **3rd-party vendor library**.
+[This page](https://docs.wpilib.org/en/latest/docs/software/vscode-overview/3rd-party-libraries.html) gives you an overview of how they work and how to use them.
+Specifically, [this part of the page](https://docs.wpilib.org/en/latest/docs/software/vscode-overview/3rd-party-libraries.html#managing-vs-code-libraries) tells you how to add vendor libraries in VS Code.
+You will need the REV Robotics SPARK MAX library. No other libraries are required. (The CTRE Phoenix and Kauai Labs libraries are often used for our robot, but they are not required for this project.)
+
 ---
 
 ## Your Tasks
 
-**If you would like to get extra reenforcement, WPILIB has documentation on [_Structuring a Command-Based Robot Project_](https://docs.wpilib.org/en/stable/docs/software/commandbased/structuring-command-based-project.html**)**
+**If you would like to get extra reenforcement, WPILIB has documentation on [_Structuring a Command-Based Robot Project_](https://docs.wpilib.org/en/stable/docs/software/commandbased/structuring-command-based-project.html)**
 
 **In addition, we have provided links to the documentation of most classes you may need to implement, at the bottom of this document.**
 
@@ -38,6 +45,7 @@ Your variables should be defined within the class declaration, with the access m
 ### (1) Write the contents of `RobotContainer.java`
 
 #### Background Knowledge
+
 This class contains the majority of the mappings between components.
 
 #### Coding!
