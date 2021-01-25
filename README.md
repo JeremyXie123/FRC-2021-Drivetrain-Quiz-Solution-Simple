@@ -10,7 +10,7 @@ Feel free to use any resources available to you, including our slides, google, e
 ---
 
 ## Setup
-Now that we know some git :), you can use clone! Run `git clone https://github.com/JeremyXie123/FRC-Drivetrain-Quiz` in your terminal, in whatever root directory you will be working on.
+Now that we know some git :), you can use clone! Run `git clone https://github.com/Arctos6135/FRC-Drivetrain-Quiz` in your terminal, in whatever root directory you will be working on.
 * If you would like to commit to your own repository while you make your changes, fork the official repository and work on your copy, This will allow you to push to an online repository.
 
 ## Dependency Management
