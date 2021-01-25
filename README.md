@@ -19,6 +19,7 @@ For this project you are going to be using the `CANSparkMax` class to control RE
 [This page](https://docs.wpilib.org/en/latest/docs/software/vscode-overview/3rd-party-libraries.html) gives you an overview of how they work and how to use them.
 Specifically, [this part of the page](https://docs.wpilib.org/en/latest/docs/software/vscode-overview/3rd-party-libraries.html#managing-vs-code-libraries) tells you how to add vendor libraries in VS Code.
 You will need the REV Robotics SPARK MAX library. No other libraries are required. (The CTRE Phoenix and Kauai Labs libraries are often used for our robot, but they are not required for this project.)
+* If you are using the online installation option for your vendor libraries, use this: https://www.revrobotics.com/content/sw/max/sdk/REVRobotics.json
 
 ---
 
