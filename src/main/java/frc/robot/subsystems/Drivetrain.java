@@ -4,11 +4,40 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
 	/** Creates a new Drivetrain subsystem. */
-	public Drivetrain(int leftMaster, int leftFollower, int rightMaster, int rightFollower) {}
+
+	//Variable Shadowing
+    private final CANSparkMax rightMotor;
+    private final CANSparkMax leftMotor;
+    private final CANSparkMax rightFollowerMotor;
+    private final CANSparkMax leftFollowerMotor;
+
+	public Drivetrain(int leftMaster, int leftFollower, int rightMaster, int rightFollower) {
+		rightMotor = new CANSparkMax(rightMaster, MotorType.kBrushless);
+        leftMotor = new CANSparkMax(leftMaster, MotorType.kBrushless);
+        rightFollowerMotor = new CANSparkMax(rightFollower, MotorType.kBrushless);
+        leftFollowerMotor = new CANSparkMax(leftFollower, MotorType.kBrushless);
+
+		leftFollowerMotor.follow(leftMotor);
+        rightFollowerMotor.follow(rightMotor);
+		
+        leftMotor.stopMotor();
+        rightMotor.stopMotor();
+
+        leftMotor.setInverted(true);
+        rightMotor.setInverted(false);
+	}
+
+	public void setMotors(double left, double right) {
+		leftMotor.set(left);
+		rightMotor.set(right);
+	}
 
 	@Override
 	public void periodic() {

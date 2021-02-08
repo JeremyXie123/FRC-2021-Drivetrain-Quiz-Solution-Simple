@@ -10,7 +10,17 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
 public class TeleopDrive extends CommandBase {
-		
+	// Variable Shadowing
+	private final Drivetrain drivetrain;
+	private final GenericHID controller;
+	private final int X_AXIS;
+	private final int Y_AXIS;
+
+	// Settings
+	private static final double DEADZONE = 0.15;
+
+	// States
+	private static boolean reverseDrive = false;
 
 	/**
 	 * Creates a new ExampleCommand.
@@ -18,7 +28,15 @@ public class TeleopDrive extends CommandBase {
 	 * @param subsystem The subsystem used by this command.
 	 */
 	public TeleopDrive(Drivetrain drivetrain, GenericHID controller, int fwdRevAxis, int leftRightAxis) {
-		
+		this.drivetrain = drivetrain;
+		this.controller = controller;
+		this.Y_AXIS = fwdRevAxis;
+		this.X_AXIS = leftRightAxis;
+		addRequirements(drivetrain);
+	}
+
+	public static void toggleReverseDrive() {
+		reverseDrive = !reverseDrive;
 	}
 
 	// Called when the command is initially scheduled.
@@ -27,11 +45,35 @@ public class TeleopDrive extends CommandBase {
 
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
-	public void execute() {}
+	public void execute() {
+        double x = controller.getRawAxis(X_AXIS);
+		double y = -controller.getRawAxis(Y_AXIS);
+		if (!(Math.abs(x) > DEADZONE)) {
+			x = 0;
+		}
+		if (!(Math.abs(y) > DEADZONE)) {
+			y = 0;
+		}
+
+		x = Math.copySign(x * x, x);
+		y = Math.copySign(y * y, y);
+		
+
+		if (reverseDrive) {
+			y = -y;
+		}
+		
+		double l = y + x;
+		double r = y - x;
+
+		drivetrain.setMotors(l, r);
+	}
 
 	// Called once the command ends or is interrupted.
 	@Override
-	public void end(boolean interrupted) {}
+	public void end(boolean interrupted) {
+		drivetrain.setMotors(0, 0);
+	}
 
 	// Returns true when the command should end.
 	@Override
